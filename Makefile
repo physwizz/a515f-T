@@ -314,7 +314,10 @@ ARCH		?=arm64
 
 # CROSS_COMPILE	?=$(srctree)/toolchain/gcc/linux-x86/aarch64/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 
-CROSS_COMPILE=/home/physwizz/toolchains/toolchains-for-snapdragon/aarch64-linux-android-4.9-master/bin/aarch64-linux-android-
+# CROSS_COMPILE=/home/physwizz/toolchains/toolchains-for-snapdragon/aarch64-linux-android-4.9-master/bin/aarch64-linux-android-
+
+CROSS_COMPILE	=$(srctree)/toolchain/aarch64-linux-android-4.9-master/bin/aarch64-linux-android-
+
 
 # Architecture as present in compile.h
 UTS_MACHINE 	:= $(ARCH)
@@ -380,7 +383,9 @@ LDGOLD		= $(CROSS_COMPILE)ld.gold
 # CC		= $(srctree)/toolchain/clang/host/linux-x86/clang-4639204/bin/clang
 
 
-CC=/home/physwizz/toolchains/prebuilts_clang_host_linux-x86_clang-4639204/bin/clang
+# CC=/home/physwizz/toolchains/prebuilts_clang_host_linux-x86_clang-4639204/bin/clang
+
+CC		= $(srctree)/toolchain/prebuilts_clang_host_linux-x86_clang-4639204/bin/clang
 
 CPP		= $(CC) -E
 AR		= $(CROSS_COMPILE)ar
@@ -519,8 +524,9 @@ ifneq ($(CROSS_COMPILE),)
 # CLANG_TRIPLE	?= $(srctree)/toolchain/clang/host/linux-x86/clang-4639204/bin/aarch64-linux-gnu-
 
 
-CLANG_TRIPLE=/home/physwizz/toolchains/clang13/bin/aarch64-linux-gnu-
+# CLANG_TRIPLE=/home/physwizz/toolchains/clang13/bin/aarch64-linux-gnu-
 
+CLANG_TRIPLE	= $(srctree)/toolchain/clang13/bin/aarch64-linux-gnu-
 
 CLANG_FLAGS	:= --target=$(notdir $(CLANG_TRIPLE:%-=%))
 ifeq ($(shell $(srctree)/scripts/clang-android.sh $(CC) $(CLANG_FLAGS)), y)
