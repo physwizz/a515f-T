@@ -316,7 +316,7 @@ ARCH		?=arm64
 
 # CROSS_COMPILE=/home/physwizz/toolchains/toolchains-for-snapdragon/aarch64-linux-android-4.9-master/bin/aarch64-linux-android-
 
-CROSS_COMPILE	=$(srctree)/toolchain/aarch64-linux-android-4.9-master/bin/aarch64-linux-android-
+CROSS_COMPILE	=/home/physwizz/aarch64-linux-android-4.9/bin/aarch64-linux-android-
 
 
 # Architecture as present in compile.h
